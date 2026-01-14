@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/assets/favicon.ico" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/quran.css" />
+    <link rel="stylesheet" href="/css/media.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Amiri+Quran&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Quran - Corano in Arabo e Italiano | Muslim Bro</title>
+  </head>
+
+  <body>
+    <button id="backButton">Home</button>
+
+    <input type="text" id="searchSurah" class="searchAudio" placeholder="Cerca sura..." />
+
+    <!-- Navigation Tabs -->
+    <div class="tabs-container">
+      <button class="tab-btn active" data-tab="surahs">Lettura</button>
+      <button class="tab-btn" data-tab="audio">Ascolto</button>
+    </div>
+
+    <!-- Sezione Testo Sure -->
+    <div id="surahsSection" class="section active">
+      <div class="container" id="app"></div>
+    </div>
+
+    <!-- Sezione Audio Completo -->
+    <div id="audioSection" class="section">
+      <div class="container" id="audioContainer"></div>
+    </div>
+
+    <!-- Modal per la singola sura -->
+    <div id="surahModal" class="modal">
+      <div class="modal-content">
+        <span class="close" role="button" aria-label="Chiudi modal"
+          >&times;</span
+        >
+
+        <div class="sura-header centered">
+          <h2 id="surahTitleAr" class="surah-title-ar"></h2>
+          <h3 id="surahTitleIt" class="surah-title-it"></h3>
+        </div>
+
+        <div id="surahContent" class="surah-text"></div>
+      </div>
+    </div>
+
+    <script src="/js/quran.js"></script>
+  </body>
+</html>

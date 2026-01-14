@@ -1,0 +1,516 @@
+/* Quran.css – MuslimBro Complete Edition */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
+}
+
+:root {
+  --blue: #0270d0cc;
+  --gray-back: #f5f5f8;
+  --mid-gray: #3b3b40;
+  --dark: #1c1c1f;
+  --yellow: #ffe600;
+}
+
+/* ===============================
+   BODY & BACKGROUND
+================================*/
+body {
+  cursor: url("/assets/qibla.webp"), auto;
+  background: url(/assets/background.webp) center/cover no-repeat fixed;
+  color: var(--dark);
+  line-height: 1.6;
+  transition: 0.6s;
+}
+
+/* ===============================
+   TABS NAVIGATION
+================================*/
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem auto;
+  max-width: 600px;
+  padding: 0 1rem;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 0.9rem 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid rgba(2, 112, 208, 0.3);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--mid-gray);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: var(--blue);
+  transform: translateY(-2px);
+}
+
+.tab-btn.active {
+  background: var(--blue);
+  color: white;
+  border-color: var(--blue);
+  box-shadow: 0 4px 12px rgba(2, 112, 208, 0.3);
+}
+
+/* ===============================
+   SECTIONS
+================================*/
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+/* ===============================
+   CONTAINER E CARDS
+================================*/
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.8rem;
+  width: 90%;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 24px;
+  border: 2px solid rgba(2, 112, 208, 0.2);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(4px);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid rgba(2, 112, 208, 0.15);
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 1.6rem 1rem;
+  text-align: center;
+  transition: 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--blue);
+}
+
+.card-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 0.3rem;
+  font-family: "Amiri", serif;
+}
+
+.card-text {
+  color: var(--dark);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.card small {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--mid-gray);
+  margin-top: 0.4rem;
+}
+
+/* ===============================
+   AUDIO PLAYER CARD
+================================*/
+.audio-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(2, 112, 208, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 1.8rem 1.4rem;
+  text-align: center;
+  transition: 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.audio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--blue);
+}
+
+.audio-card-header {
+  margin-bottom: 1.2rem;
+}
+
+.audio-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 0.3rem;
+  font-family: "Amiri", serif;
+}
+
+.audio-card-subtitle {
+  color: var(--dark);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.audio-card-info {
+  font-size: 0.85rem;
+  color: var(--mid-gray);
+}
+
+.audio-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.audio-progress {
+  flex: 1;
+  height: 6px;
+  background: rgba(2, 112, 208, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.audio-progress-bar {
+  height: 100%;
+  background: var(--blue);
+  width: 0%;
+  transition: width 0.1s linear;
+  border-radius: 10px;
+}
+
+.audio-time {
+  font-size: 0.85rem;
+  color: var(--mid-gray);
+  min-width: 45px;
+  text-align: center;
+}
+
+/* ===============================
+   SEARCH BAR
+================================*/
+#searchSurah,
+#searchAudio {
+  display: block;
+  margin: 2rem auto 1.5rem;
+  padding: 0.8rem 1.2rem;
+  width: 90%;
+  max-width: 500px;
+  font-size: 1.05rem;
+  border: 3px solid var(--blue);
+  border-radius: 50px;
+  background-color: #ffffffcc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  color: var(--dark);
+  transition: 0.3s;
+  text-align: center;
+  backdrop-filter: blur(2px);
+}
+
+#searchSurah:focus,
+#searchAudio:focus {
+  border-color: var(--yellow);
+  box-shadow: 0 0 12px rgba(2, 112, 208, 0.25);
+}
+
+/* ===============================
+   BACK BUTTON
+================================*/
+#backButton {
+  display: block;
+  margin: 2rem auto 1rem;
+  padding: 0.8rem 2rem;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(2, 112, 208, 0.2);
+}
+
+#backButton:hover {
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   MODAL
+================================*/
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  animation: modalFade 0.4s ease forwards;
+  padding: 2rem 0;
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 2rem 2.2rem;
+  border-radius: 20px;
+  width: 94%;
+  max-width: 880px;
+  max-height: 92vh;
+  overflow-y: auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  scrollbar-width: thin;
+  scrollbar-color: var(--blue) transparent;
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: var(--blue);
+  border-radius: 10px;
+}
+
+/* ===============================
+   HEADER DELLA SURA
+================================*/
+.sura-header {
+  text-align: center;
+  border-bottom: none;
+  padding: 2rem 0rem;
+}
+
+.sura-header h2 {
+  font-family: "Amiri", serif;
+  font-size: 2rem;
+  color: #0270d0;
+  font-weight: 700;
+}
+
+.sura-header h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #555;
+  font-style: italic;
+  margin-top: 0;
+}
+
+/* ===============================
+   CLOSE BUTTON
+================================*/
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1.4rem;
+  font-size: 1.8rem;
+  color: #0270d0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.close:hover {
+  color: var(--yellow);
+  transform: scale(1.1);
+}
+
+/* ===============================
+   CONTENUTO DELLA SURA
+================================*/
+#surahContent {
+  font-size: 1.1rem;
+  color: var(--dark);
+  padding: 0.8rem;
+}
+
+/* Blocco complessivo dell'ayah */
+.ayah-block {
+  max-width: 900px;
+  margin: 1.2rem auto;
+  padding: 1rem 1.4rem;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(2, 112, 208, 0.08);
+}
+
+.ayah-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+}
+
+/* Numero ayah */
+.ayah-number {
+  min-width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(2, 112, 208, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0361b4;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(2, 112, 208, 0.08);
+}
+/* Bottone audio (ayah + player sura) */
+.ayah-audio-btn,
+.play-btn {
+  min-width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(2, 112, 208, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0361b4;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(2, 112, 208, 0.08);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ayah-audio-btn:hover,
+.play-btn:hover {
+  transform: scale(0.95);
+  background: white;
+}
+
+.ayah-audio-btn i,
+.play-btn i {
+  font-size: 1rem;
+  color: var(--blue);
+}
+
+.play-btn.playing {
+  background: var(--yellow);
+  border-color: var(--yellow);
+}
+
+/* Testo arabo */
+.ayah-ar {
+  display: block;
+  direction: rtl;
+  text-align: right;
+  font-family: "Amiri Quran", serif;
+  font-size: clamp(1.3em, 2.6vw, 1.9em);
+  line-height: 2.4;
+  color: #101010;
+  margin-bottom: 0.7rem;
+  background: rgba(230, 245, 255, 0.75);
+  border-radius: 10px;
+  padding: 0.7rem 1.1rem;
+}
+
+/* Testo italiano */
+.ayah-it {
+  display: block;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 1.05em;
+  line-height: 1.9;
+  color: #33343c;
+  margin-top: 0.4rem;
+  background: rgba(230, 245, 255, 0.75);
+  border-radius: 10px;
+  padding: 0.7rem 1.1rem;
+}
+
+/* ===============================
+   BASMALA
+================================*/
+.basmala {
+  text-align: center;
+  font-family: "Amiri", serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 2em 0;
+  color: var(--blue);
+  background: rgba(230, 245, 255, 0.7);
+  padding: 0.8em 1.2em;
+  border-radius: 16px;
+}
+
+/*=======LOADER=======*/
+
+.loader-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 5px solid white;
+  border-top: 5px solid var(--blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
